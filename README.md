@@ -315,10 +315,10 @@ https://www.jetbrains.com/help/clion/embedded-development.html
 
 ## 参考
 
--[embedded-overview](https://www.jetbrains.com/help/clion/embedded-overview.html)
--[embedded-development](https://www.jetbrains.com/help/clion/embedded-development.html)
--[](https://www.jetbrains.com/help/clion/embedded-gdb-server.html)
--[](https://www.jetbrains.com/help/clion/peripheral-view.html)
+https://www.jetbrains.com/help/clion/embedded-overview.html &nbsp
+https://www.jetbrains.com/help/clion/embedded-development.html &nbsp
+https://www.jetbrains.com/help/clion/embedded-gdb-server.html &nbsp
+https://www.jetbrains.com/help/clion/peripheral-view.html &nbsp
 
 ## 特别感谢
 
