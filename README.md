@@ -1,9 +1,9 @@
 # Macos🀄️STM32开发环境搭建
 
-## 前言
+## 前言(讲废话合乎粥礼)
 
 STM32是意法半导体（STMicroelectronics）推出的一系列基于ARM Cortex-M内核的微控制器。 它们广泛应用于嵌入式系统、物联网设备、工业自动化等领域。
-STM32系列微控制器具有高性能、低功耗和丰富的外设接口，适合各种应用场景。本教程以stm32f103c8t6为例，介绍如何在macos上搭建STM32开发环境。
+STM32系列微控制器具有高性能、低功耗和丰富的外设接口，适合各种应用场景。我的教程以stm32f103c8t6为例，介绍如何在macos上搭建STM32开发环境。
 
 ## 1. 安装Homebrew
 
@@ -39,29 +39,31 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/bottles
 ```
 
-这些镜像源可以在终端中运行以下命令来设置：
+在zsh终端中设置：
 
 ```bash
 vim ~/.zshrc
 ```
 
-在文件末尾添加以下内容：
+在文件末尾添加：
 
 ```bash
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 ```
 
-保存并退出后，运行以下命令使配置生效：
+保存并退出后，source一下使配置生效：
 
 ```bash
 source ~/.zshrc
 ```
 
-也可以直接使用command+Q退出终端，然后重新打开终端即可。
+也可以直接command+Q退出终端，然后重新打开终端即可。
 
 ## 2. 安装Xcode(可选)与Xcode命令行工具
 
-虽然我们主要使用Clion进行开发，但安装Xcode可以提供一些额外的工具和功能。
+虽然我们使用Clion进行STM32开发，但安装Xcode可以提供一些额外的工具和功能。
+如果你已经安装了Xcode，可以跳过这一步。
+Xcode在app store里有,不在此赘述
 要安装Xcode命令行工具，可以在终端中运行以下命令：
 
 ```bash
@@ -92,14 +94,14 @@ STM32CubeMX是STMicroelectronics提供的图形化配置工具，用于配置STM
 ## 5. 安装stm32cubeclt
 
 STM32CubeCLT是STMicroelectronics提供的命令行工具，用于在第三方ide中访问stm32cubeide的功能
-如代码生成、固件库下载等。可以在ST的官网上下载STM32CubeCLT(macos版本)。安装完成后，打开终端并运行以下命令：
+如代码生成、固件库下载等。可以在ST的官网上下载STM32CubeCLT(macos版本)。安装完成后，打开终端并运行：
 
 ```bash
 sudo cp -r /Applications/STM32CubeCLT.app/Contents/Resources/stm32cubeclt /usr/local/bin/
 ```
 
 将STM32CubeCLT的可执行文件复制到/usr/local/bin/目录下，以便在终端中使用。
-或者可以把STM32CubeCLT的可执行文件添加到zsh环境变量中，具体方法如下：
+或者可以把STM32CubeCLT的可执行文件添加到zsh环境变量中
 
 ```bash
 vim ~/.zshrc
@@ -117,11 +119,11 @@ export PATH=$PATH:/Applications/STM32CubeCLT.app/Contents/Resources
 source ~/.zshrc
 ```
 
-也可以直接使用command+Q退出终端，然后重新打开终端即可。
+也可以直接command+Q退出终端，然后重新打开终端即可。
 
 ## 6.安装你使用的调试器对应的驱动
 
-macos上支持最好的调试器大概是JLink,Segger为它准备了arm架构macos的驱动
+macos上支持最好的调试器大概是JLink,Segger为它准备了arm架构macos的驱动(🥲感动)
 可以在Segger的官网下载驱动,安装完成后,打开终端并运行以下命令：
 
 ```bash
@@ -135,7 +137,7 @@ sudo cp -r /Applications/SEGGER/你的jlink驱动版本/Contents/Resources/JLink
 这是最重要的一步,arm-none-eabi-gcc是arm为cortex-m架构设计的的gcc交叉编译器,用于编译stm32的代码
 在很多网上的教程中,都使用homebrew安装,homebrew的版本缺少了几个关键的头文件,我在reddit上苦苦挣扎了一晚上才搞明白是homebrew的问题
 所以我们在arm官网上:https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads 下载macos版本的tar.xz
-![arm-none-eabi-gcc](arm eabi.png)
+![arm-none-eabi-gcc](arm%20eabi.png)
 下载完后在你专门用来存放工具链的目录下解压,不过我估计你们没这个习惯,所以随便解压到一个你记得住的目录即可
 解压完成后,打开终端并运行以下命令：
 
@@ -312,13 +314,10 @@ https://www.jetbrains.com/help/clion/embedded-development.html
 
 ## 参考
 
-https://www.jetbrains.com/help/clion/embedded-overview.html 
-
-https://www.jetbrains.com/help/clion/embedded-development.html 
-
-https://www.jetbrains.com/help/clion/embedded-gdb-server.html 
-
-https://www.jetbrains.com/help/clion/peripheral-view.html 
+https://www.jetbrains.com/help/clion/embedded-overview.html
+https://www.jetbrains.com/help/clion/embedded-development.html
+https://www.jetbrains.com/help/clion/embedded-gdb-server.html
+https://www.jetbrains.com/help/clion/peripheral-view.html
 
 ## 特别感谢
 
