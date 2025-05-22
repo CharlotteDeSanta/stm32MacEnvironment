@@ -61,10 +61,7 @@ source ~/.zshrc
 
 ## 2. 安装Xcode(可选)与Xcode命令行工具
 
-Xcode是苹果公司为macOS开发的集成开发环境（IDE），用于开发apple生态应用程序。
-虽然我们主要使用Clion进行STM32开发，但安装Xcode可以提供一些额外的工具和功能。
-如果你已经安装了Xcode，可以跳过这一步。
-要安装Xcode，可以在App Store中搜索“Xcode”并进行安装。安装完成后，打开Xcode并同意许可协议。
+虽然我们主要使用Clion进行开发，但安装Xcode可以提供一些额外的工具和功能。
 要安装Xcode命令行工具，可以在终端中运行以下命令：
 
 ```bash
